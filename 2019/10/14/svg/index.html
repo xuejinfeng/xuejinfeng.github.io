@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小峰blog</title>
+  <title>svg | 小峰blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小峰blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="什么是SVG SVG 指可伸缩矢量图形 (Scalable Vector Graphics) SVG 用来定义用于网络的基于矢量的图形 SVG 使用 XML 格式定义图形 SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失 SVG 是万维网联盟的标准 SVG 与诸如 DOM 和 XSL 之类的 W3C 标准是一个整体">
+<meta name="keywords" content="svg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="svg">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/svg/index.html">
 <meta property="og:site_name" content="小峰blog">
+<meta property="og:description" content="什么是SVG SVG 指可伸缩矢量图形 (Scalable Vector Graphics) SVG 用来定义用于网络的基于矢量的图形 SVG 使用 XML 格式定义图形 SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失 SVG 是万维网联盟的标准 SVG 与诸如 DOM 和 XSL 之类的 W3C 标准是一个整体">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-14T02:26:50.798Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小峰blog">
+<meta name="twitter:title" content="svg">
+<meta name="twitter:description" content="什么是SVG SVG 指可伸缩矢量图形 (Scalable Vector Graphics) SVG 用来定义用于网络的基于矢量的图形 SVG 使用 XML 格式定义图形 SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失 SVG 是万维网联盟的标准 SVG 与诸如 DOM 和 XSL 之类的 W3C 标准是一个整体">
   
     <link rel="alternative" href="/atom.xml" title="小峰blog" type="application/atom+xml">
   
@@ -154,16 +159,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-svg" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-svg" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/14/svg/">svg</a>
+    <h1 class="article-title" itemprop="name">
+      svg
     </h1>
   
 
@@ -173,6 +176,10 @@
 </a>
         
         
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
@@ -183,12 +190,151 @@
 <li>SVG 使用 XML 格式定义图形</li>
 <li>SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失</li>
 <li>SVG 是万维网联盟的标准</li>
-<li>SVG 与诸如 DOM 和 XSL 之类的 W3C 标准是一个整体
-        
-          <a class="article-more-a" href="/2019/10/14/svg/#more">more >></a>
-        
+<li>SVG 与诸如 DOM 和 XSL 之类的 W3C 标准是一个整体<a id="more"></a>
+<h2 id="SVG形状元素"><a href="#SVG形状元素" class="headerlink" title="SVG形状元素"></a>SVG形状元素</h2></li>
+<li>矩形 <rect></rect></li>
+<li>圆形 <circle></circle></li>
+<li>椭圆 <ellipse></ellipse></li>
+<li>线 <line></line></li>
+<li>折线 <polyline></polyline></li>
+<li>多边形 <polygon></polygon></li>
+<li>路径 <path><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="矩形-rect"><a href="#矩形-rect" class="headerlink" title="矩形 - rect"></a>矩形 - rect</h3></path></li>
+</ul>
+<ol>
+<li><p>结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;</span><br><span class="line">  &lt;rect width=&quot;300&quot; height=&quot;100&quot; rx=&quot;20&quot; ry=&quot;20&quot;</span><br><span class="line">  style=&quot;fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0) &quot;/&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解释</p>
+</li>
+</ol>
+<ul>
+<li>rect 元素的 width 和 height 属性可定义矩形的高度和宽度</li>
+<li>style 属性用来定义 CSS 属性</li>
+<li>CSS 的 fill 属性定义矩形的填充颜色（rgb 值、颜色名或者十六进制值）</li>
+<li>CSS 的 stroke-width 属性定义矩形边框的宽度</li>
+<li>CSS 的 stroke 属性定义矩形边框的颜色 </li>
+<li>rx和ry来定义圆角的<h3 id="圆形-circle"><a href="#圆形-circle" class="headerlink" title="圆形- circle"></a>圆形- circle</h3></li>
+</ul>
+<ol>
+<li><p>结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;</span><br><span class="line">  &lt;circle cx=&quot;100&quot; cy=&quot;50&quot; r=&quot;40&quot; stroke=&quot;black&quot;</span><br><span class="line">  stroke-width=&quot;2&quot; fill=&quot;red&quot;/&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解释</p>
+</li>
+</ol>
+<ul>
+<li>cx和cy属性定义圆点的x和y坐标。如果省略cx和cy，圆的中心会被设置为(0, 0)</li>
+<li>r属性定义圆的半径<h3 id="椭圆-ellipse"><a href="#椭圆-ellipse" class="headerlink" title="椭圆 - ellipse"></a>椭圆 - ellipse</h3></li>
+</ul>
+<ol>
+<li><p>结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;</span><br><span class="line">  &lt;ellipse cx=&quot;300&quot; cy=&quot;80&quot; rx=&quot;100&quot; ry=&quot;50&quot;</span><br><span class="line">  style=&quot;fill:yellow;stroke:purple;stroke-width:2&quot;/&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解释</p>
+</li>
+</ol>
+<ul>
+<li>CX属性定义的椭圆中心的x坐标</li>
+<li>CY属性定义的椭圆中心的y坐标</li>
+<li>RX属性定义的水平半径</li>
+<li>RY属性定义的垂直半径</li>
+<li>r属性定义圆的半径<h3 id="直线-line"><a href="#直线-line" class="headerlink" title="直线 - line"></a>直线 - line</h3></li>
+</ul>
+<ol>
+<li><p>结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;</span><br><span class="line">  &lt;line x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;200&quot; y2=&quot;200&quot;</span><br><span class="line">  style=&quot;stroke:rgb(255,0,0);stroke-width:2&quot;/&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解释</p>
+</li>
+</ol>
+<ul>
+<li>x1 属性在 x 轴定义线条的开始</li>
+<li>y1 属性在 y 轴定义线条的开始</li>
+<li>x2 属性在 x 轴定义线条的结束</li>
+<li>y2 属性在 y 轴定义线条的结束<h3 id="多边形-polygon"><a href="#多边形-polygon" class="headerlink" title="多边形 - polygon"></a>多边形 - polygon</h3></li>
+</ul>
+<ol>
+<li><p>结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;</span><br><span class="line">  &lt;polygon points=&quot;200,10 250,190 160,210&quot;</span><br><span class="line">  style=&quot;fill:lime;stroke:purple;stroke-width:1&quot;/&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解释</p>
+</li>
+</ol>
+<ul>
+<li>points 属性定义多边形每个角的 x 和 y 坐标</li>
+<li>每一组坐标用’空格’隔开 每个坐标的xy值用 ‘逗号’<h3 id="曲线-polyline"><a href="#曲线-polyline" class="headerlink" title="曲线 - polyline"></a>曲线 - polyline</h3></li>
+</ul>
+<ol>
+<li><p>结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;</span><br><span class="line">  &lt;polyline points=&quot;20,20 40,25 60,40 80,120 120,140 200,180&quot;</span><br><span class="line">  style=&quot;fill:none;stroke:black;stroke-width:3&quot; /&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解释</p>
+</li>
+</ol>
+<ul>
+<li>fill:none  不能显示其他就是none 若加上的话会出现一侧有颜色填充<h3 id="路径-path"><a href="#路径-path" class="headerlink" title="路径 - path"></a>路径 - path</h3></li>
+</ul>
+<ol>
+<li><p>结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;</span><br><span class="line">    &lt;path d=&quot;M150 0 L75 200 L225 200 Z&quot; /&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解释<br>注意：上面的例子定义了一条路径，它开始于位置150 0，到达位置75 200，然后从那里开始到225 200，最后在150 0关闭路径。</p>
+</li>
+</ol>
+<ul>
+<li>M = moveto   将画笔移动到指定位置</li>
+<li>L = lineto   将指定位置和lineto的位置用直线链接起来</li>
+<li>H = horizontal lineto  画水平线到指定x的位置</li>
+<li>V = vertical lineto  画垂直直线到指定的y的位置</li>
+<li>C = curveto</li>
+<li>S = smooth curveto</li>
+<li>Q = quadratic Bézier curve</li>
+<li>T = smooth quadratic Bézier curveto</li>
+<li>A = elliptical Arc</li>
+<li>Z = closepath<h3 id="文本-text"><a href="#文本-text" class="headerlink" title="文本 - text"></a>文本 - text</h3></li>
+</ul>
+<ol>
+<li><p>结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;</span><br><span class="line">  &lt;text x=&quot;0&quot; y=&quot;15&quot; fill=&quot;red&quot;&gt;I love SVG&lt;/text&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解释</p>
+</li>
+</ol>
+<ul>
+<li>text便签</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wexin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+            <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -208,16 +354,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/14/svg/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/14/svg/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/13/hello/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hello</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -232,168 +437,64 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/13/hello/">hello</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/13/hello/" class="archive-article-date">
-  	<time datetime="2019-10-13T10:04:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="hexo是什么？"><a href="#hexo是什么？" class="headerlink" title="hexo是什么？"></a>hexo是什么？</h2><p>+写blog虽然经历了N多不同时代的产品，恒久不变的始终是自己无人问津的网站。虽然没几个人看，还是隔断时间就要折腾一下。从最开始的wordpress，到tale，到现在的hexo，网站变得越来越简单，越来越轻量级，这里主要说说hexo的使用。</p>
-        
-          <a class="article-more-a" href="/2019/10/13/hello/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo  markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/13/hello/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是SVG"><span class="toc-number">1.</span> <span class="toc-text">什么是SVG</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVG形状元素"><span class="toc-number"></span> <span class="toc-text">SVG形状元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number"></span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#矩形-rect"><span class="toc-number">1.</span> <span class="toc-text">矩形 - rect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#圆形-circle"><span class="toc-number">2.</span> <span class="toc-text">圆形- circle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#椭圆-ellipse"><span class="toc-number">3.</span> <span class="toc-text">椭圆 - ellipse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直线-line"><span class="toc-number">4.</span> <span class="toc-text">直线 - line</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多边形-polygon"><span class="toc-number">5.</span> <span class="toc-text">多边形 - polygon</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#曲线-polyline"><span class="toc-number">6.</span> <span class="toc-text">曲线 - polyline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路径-path"><span class="toc-number">7.</span> <span class="toc-text">路径 - path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本-text"><span class="toc-number">8.</span> <span class="toc-text">文本 - text</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-Vue第一天" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/13/Vue第一天/">vue第一天</a>
-    </h1>
   
 
-        
-        <a href="/2019/10/13/Vue第一天/" class="archive-article-date">
-  	<time datetime="2019-10-13T06:12:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="什么是Vue-js"><a href="#什么是Vue-js" class="headerlink" title="什么是Vue.js"></a>什么是Vue.js</h3><ul>
-<li><p>Vue.js 是目前最火的一个前端框架，React是最流行的一个前端框架（React除了开发网站，还可以开发手机App， Vue语法也是可以用于进行手机App开发的，需要借助于Weex）</p>
-        
-          <a class="article-more-a" href="/2019/10/13/Vue第一天/#more">more >></a>
-        
-      
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/13/Vue第一天/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
+  
+  <section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "FTWdDd82dpteNvDea9S5vn4t-gzGzoHsz",
+            app_key: "EKfNcX06SOSwAIatQiBNJ9b6",
+            placeholder: "来发个评论吧，给up一点&#34;tip&#34;",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+  
 
 
 
   
+  
+
+  
+
+  
+
   
 
 
@@ -420,8 +521,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
