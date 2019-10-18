@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: hexo markdown | 小峰blog</title>
+  <title>javascript-02 | 小峰blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小峰blog">
-<meta property="og:url" content="http://yoursite.com/tags/hexo-markdown/index.html">
+  <meta name="description" content="javascript的引用类型 使用对象  创建并操作数组  理解基本的 JavaScript类型  使用基本类型和基本包装类型">
+<meta name="keywords" content="javascript-02">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-02">
+<meta property="og:url" content="http://yoursite.com/2019/10/18/javascript-02/index.html">
 <meta property="og:site_name" content="小峰blog">
+<meta property="og:description" content="javascript的引用类型 使用对象  创建并操作数组  理解基本的 JavaScript类型  使用基本类型和基本包装类型">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-18T11:27:01.656Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小峰blog">
+<meta name="twitter:title" content="javascript-02">
+<meta name="twitter:description" content="javascript的引用类型 使用对象  创建并操作数组  理解基本的 JavaScript类型  使用基本类型和基本包装类型">
   
     <link rel="alternative" href="/atom.xml" title="小峰blog" type="application/atom+xml">
   
@@ -154,60 +159,270 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-javascript-02" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/13/hello/" class="archive-article-date">
-  	<time datetime="2019-10-13T10:04:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/13/hello/">hello</a>
+    <h1 class="article-title" itemprop="name">
+      javascript-02
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/18/javascript-02/" class="archive-article-date">
+  	<time datetime="2019-10-18T11:22:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
+</a>
+        
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="javascript的引用类型"><a href="#javascript的引用类型" class="headerlink" title="javascript的引用类型"></a>javascript的引用类型</h2><ul>
+<li><p>使用对象</p>
+</li>
+<li><p>创建并操作数组</p>
+</li>
+<li><p>理解基本的 JavaScript类型</p>
+</li>
+<li><p>使用基本类型和基本包装类型 </p>
+<a id="more"></a>
+<h3 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h3></li>
+<li><p>创建 Object 实例的方式有两种</p>
+<ul>
+<li><p>第一种是使用 new 操作符后跟 Object 构造函数 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var person = new Object(); </span><br><span class="line">person.name = &quot;Nicholas&quot;; </span><br><span class="line">person.age = 29;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另一种方式是使用对象字面量表示法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;    </span><br><span class="line"> name : &quot;Nicholas&quot;,     </span><br><span class="line"> age : 29 &#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p>注意：一般来说，访问对象属性时使用的都是点表示法，这也是很多面向对象语言中通用的语法。不过，<br>在JavaScript 也可以使用方括号表示法来访问对象的属性。在使用方括号语法时，应该将要访问的属性<br>以字符串的形式放在方括号中，如下面的例子所示。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">alert(person[&quot;name&quot;]);       //&quot;Nicholas&quot; </span><br><span class="line">alert(person.name);         //&quot;Nicholas&quot; </span><br><span class="line">``` </span><br><span class="line">### Array类型</span><br><span class="line">- 1.创建数组的基本方式有两种</span><br><span class="line">  - 1.1使用Array构造函数</span><br><span class="line">    &gt; var colors = new Array(20); //如果传入一个值，是创建一个包含 3 项的数组 </span><br><span class="line">    &gt; var colors= new Array(&quot;Greg&quot;); //创建一个包含 1 项，即字符串&quot;Greg&quot;的数组 </span><br><span class="line">  - 1.2使用数组字面量表示法，数组字面量由一对包含数组项的方括号表 示，多个数组项之间以逗号隔开，如下所示</span><br></pre></td></tr></table></figure>
+
+<p>   var colors = [“red”, “blue”, “green”]; // 创建一个包含 3 个字符串的数组<br>   var names = [];                      // 创建一个空数组<br>   var values = [1,2,];                  // 不要这样！这样会创建一个包含 2 或 3 项的数组<br>   var options = [,,,,,];                  // 不要这样！这样会创建一个包含 5 或 6 项的数组  </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 检测是不是数组的方法</span><br><span class="line">&gt; isArray(),它的调用者是Array</span><br><span class="line">&gt; if (Array.isArray(value))&#123;</span><br><span class="line">     //对数组执行某些操作</span><br><span class="line">     &#125;</span><br><span class="line">- 转换方法 </span><br><span class="line">调用数组的 toString()方法会返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串。</span><br><span class="line">而调用valueOf()返回的还是数组</span><br><span class="line">看下面这个例子</span><br></pre></td></tr></table></figure>
+
+<p>var colors = [“red”, “blue”, “green”];    // 创建一个包含 3 个字符串的数组<br>alert(colors.toString());     // red,blue,green<br>alert(colors.valueOf());      // red,blue,green<br>alert(colors);                // red,blue,green</p>
+<pre><code>- 数组常用的方法
+ + push()  新元素添加到数组结尾，并返回数组长度
+ + unshift() 将新元素添加到数组开头，并返回数组长度
+ + splice(开始位置(索引),删除长度)
+ + splice(开始位置(索引),删除长度,添加的元素)
+ + shift()移除数组最前面的元素并返回该元素,数组中元素自动前移
+ + pop() 移除数组最后面的元素并返回该元素
+ + concat() ＆并数组返回新的数组
+    &gt; var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]; 
+    &gt; var colors2 = colors.concat(&quot;yellow&quot;, [&quot;black&quot;, &quot;brown&quot;]); 
+    &gt; alert(colors);     //red,green,blue         
+    &gt; alert(colors2);    //red,green,blue,yellow,black,brown 
+ + join 将数组转换成字符串，方法的参数中表示的是数组的每一项，以什么方法来链接
+    &gt; 比如：join(&quot;-&quot;) //转换为数组并且每一项用&quot;-&quot;链接
+ + sort和reverse排序，分别是正序和倒序
+注：待完善，有时间就会更新</code></pre></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wexin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+            <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo markdown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">javascript-02</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/18/javascript-02/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/10/17/spring/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">spring</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript的引用类型"><span class="toc-number">1.</span> <span class="toc-text">javascript的引用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object类型"><span class="toc-number">1.1.</span> <span class="toc-text">Object类型</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+  <section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'true' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "FTWdDd82dpteNvDea9S5vn4t-gzGzoHsz",
+            app_key: "EKfNcX06SOSwAIatQiBNJ9b6",
+            placeholder: "来发个评论吧，给up一点&#34;tip&#34;",
+            avatar:"monsterid"
+        });
+    }
+</script>
+  </section>
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -234,9 +449,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
