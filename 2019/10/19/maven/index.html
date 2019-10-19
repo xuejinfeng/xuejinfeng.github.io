@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: javascript-02 | 小峰blog</title>
+  <title>maven | 小峰blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小峰blog">
-<meta property="og:url" content="http://yoursite.com/tags/javascript-02/index.html">
+  <meta name="description" content="阿里云的镜像配置，下载速度快点    nexus-aliyun    central     nexus-aliyun  http://maven.aliyun.com/nexus/content/groups/public 1、maven工程的搭建(ecplise配置百度)maven 可以管理JAR包，和java一样，可以跨平台的下载：一般下载的是“apache-maven-3.5.4-bin.">
+<meta name="keywords" content="maven">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven">
+<meta property="og:url" content="http://yoursite.com/2019/10/19/maven/index.html">
 <meta property="og:site_name" content="小峰blog">
+<meta property="og:description" content="阿里云的镜像配置，下载速度快点    nexus-aliyun    central     nexus-aliyun  http://maven.aliyun.com/nexus/content/groups/public 1、maven工程的搭建(ecplise配置百度)maven 可以管理JAR包，和java一样，可以跨平台的下载：一般下载的是“apache-maven-3.5.4-bin.">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-19T11:21:44.417Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小峰blog">
+<meta name="twitter:title" content="maven">
+<meta name="twitter:description" content="阿里云的镜像配置，下载速度快点    nexus-aliyun    central     nexus-aliyun  http://maven.aliyun.com/nexus/content/groups/public 1、maven工程的搭建(ecplise配置百度)maven 可以管理JAR包，和java一样，可以跨平台的下载：一般下载的是“apache-maven-3.5.4-bin.">
   
     <link rel="alternative" href="/atom.xml" title="小峰blog" type="application/atom+xml">
   
@@ -154,60 +159,270 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-maven" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/18/javascript-02/" class="archive-article-date">
-  	<time datetime="2019-10-18T11:22:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/18/javascript-02/">javascript-02</a>
+    <h1 class="article-title" itemprop="name">
+      maven
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/19/maven/" class="archive-article-date">
+  	<time datetime="2019-10-19T11:21:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-19</time>
+</a>
+        
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>阿里云的镜像配置，下载速度快点<br><mirror><br>    <id>nexus-aliyun</id><br>    <mirrorof>central</mirrorof><br>    <name> nexus-aliyun </name> <url><a href="http://maven.aliyun.com/nexus/content/groups/public" target="_blank" rel="noopener">http://maven.aliyun.com/nexus/content/groups/public</a><br></url><br></mirror></p>
+<p>1、maven工程的搭建(ecplise配置百度)<br>maven 可以管理JAR包，和java一样，可以跨平台的<br>下载：一般下载的是“apache-maven-3.5.4-bin.zip”这种形式的，然后解压，和tomcat一样可直接使用</p>
+<ul>
+<li>Maven环境变量配置：</li>
+</ul>
+<blockquote>
+<p>变量名：MAVEN_HOME<br>值（maven的目录）D:\maven\apache-maven-3.2.3<br>Path编辑：;% MAVEN_HOME %\bin  / /前面注意分号<br>测试maven配置：在cmd中运行mvn –v</p>
+</blockquote>
+<ul>
+<li>2、常用命令：maven<ul>
+<li>A、clean :清理编译后的目录</li>
+<li>B、compile  ：编译（把java文件转成字节码文件）</li>
+<li>C、test-compile:编译测试代码</li>
+<li>D、test：运行test里边的代码</li>
+<li>E、package  java项目&gt;打包成jar包  web项目&gt;打包成war包</li>
+<li>F、install 发布项目到本地仓库，用在jar包上</li>
+</ul>
+</li>
+<li>3、maven生命周期<ul>
+<li>A、clean  生命周期：clean</li>
+<li>B、default 生命周期：compile、test-compile、test、package、install</li>
+<li>C、site生命周期：生成描述文档的静态页面</li>
+<li>D、不同的生命周期可以一起执行，例如：先clean再去compile</li>
+<li>E、在相同的生命周期里边才会受到影响，例如:在default里边执行的顺序：<br>Compile&lt; test-compile&lt; test&lt; package&lt; install<br>当我们运行install的时候，他会将前面的命令都执行一次，也就是说，当执行后边的时候，在该命令前面的命令也会自动执行一次</li>
+</ul>
+</li>
+<li>4、Maven工程创建<ul>
+<li>A、插件管理（手动快速生成插件代码）在windows》show view》other》mavenRepository 》点击“open”此时会在控制台看到几目录，我们选择localRepository》右键“rebuild index”（第一次生成索引比较慢），生成索引之后打开pom.xml  右键 出现“maven”》add plugin》在enter groudId中搜索 compile，然后选择插件版本，ok ，然后在生成的代码中的plugin的下边添加<configuration><source>1.8<target>1.8</target></configuration>  到这里over，最后记得右键项目“maven” 然后update project</li>
+<li>B、添加依赖：在pom.xml中右键》add Dependency》然后在提示框里输入想要的东西，还需要在插件中配置tomcat配置，百度tomcat官网》找到maven plugin然后打开网页，找到配置粘贴复制即可,同样可以在plugin下边添加configuration来配置端口号</li>
+<li>C、Scpoe属性：是依赖下边的属性，他有五个值：compile provided，test，runtime，system(一般用到的只有前四个)</li>
+</ul>
+</li>
+<li>5、maven的优点<br>  a、    maven的清晰的数据结构<br>  b、    可以跨平台<br>  c、    一键构建项目：使用命令可以对项目一键构建，无需安装编译器和tomcat，在cmd中执行  mvn tomcat:run<br>  d、    大大提升开发效率，比如，拆分成若干个工程，不同的团队维护各自的工程<br>  e、    jar包管理（依赖管理）<pre><code>i、    从maven中央仓库获取标准的规范的jar包以及相关，避免自己下载到错误的jar包
+ii、    Maven仓库的三种概念：本地（自己）、远程（私服—一般是公司的局域网）、中央仓库（第三方），如果在本地仓库发现没有会在远程仓库查找，如远程还没有就去中央仓库（一般指阿里云）去查找，然后再下载到远程仓库，然后在下载到本地仓库，如果没有远程仓库，会直接去中央仓库下载
+iii、    设置阿里云maven仓库镜像
+1、    在settings.xml文件中mirrors下添加mirror标签，代码参考笔记最上面
+iv、    本地仓库统一管理jar包，使用jar包与项目分离，减轻项目的体积
+v、    Maven是通过坐标的方式从本地仓库获取jar包</code></pre>  1、    坐标：由公司/组织（groudId）+项目名/子项目名（artifactId）+版本号（version）组成<br>  2、    本地仓库：存放很多jar包，供maven项目使用<br>  3、    Maven通过本地仓库索引，可以以快速的找到符合要求的jar包，从而解决效率问题<br>  4、    多个maven项目可以从本地仓库获取jar包<br>  5、    在pom.xml中配置的依赖，不知道的话，百度maven仓库，里边有依赖的配置供大家使用，（直接复制过来就行了）但是需要在添加<dependencies>&lt;/ dependencies&gt;这个标签，然后把复制的代码放在这个里边<br>6、两种运行maven web的方法：<br>A、和普通的web项目一样，部署到tomcat，直接运行</dependencies></li>
+</ul>
+<p>B、就是安装tomcat maven插件，通过命令的方式运行,两种方法都需要在需要写在pom.xml中的<br><build><br>                              <plugins><br>                                        代码都放在这里<br>                              &lt;/ plugins&gt;<br></plugins></build><br>a.tomcat-maven-plugin插件使用代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">    &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;tomcat-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1&lt;/version&gt;</span><br><span class="line">    &lt;configuration&gt;</span><br><span class="line">        &lt;path&gt;/wp&lt;/path&gt;</span><br><span class="line">        &lt;port&gt;8080&lt;/port&gt;</span><br><span class="line">        &lt;uriEncoding&gt;UTF-8&lt;/uriEncoding&gt;</span><br><span class="line">        &lt;url&gt;http://localhost:8080/manager/html&lt;/url&gt;</span><br><span class="line">        &lt;server&gt;tomcat6&lt;/server&gt;</span><br><span class="line">    &lt;/configuration&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
+
+<p>运行：选 择pom.xml文件，击右键——&gt;选择 Run As——&gt; Maven build .. , 在Goals框加加入以下命令: tomcat:run<br>b.tomcat7-maven-plugin 插件使用<br>在pom.xml中加入下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;       </span><br><span class="line">  &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;2.2&lt;/version&gt;</span><br><span class="line">  &lt;configuration&gt;</span><br><span class="line">      &lt;path&gt;/&lt;/path&gt;</span><br><span class="line">      &lt;port&gt;8080&lt;/port&gt;</span><br><span class="line">      &lt;server&gt;tomcat7&lt;/server&gt;</span><br><span class="line">  &lt;/configuration&gt;</span><br><span class="line">  &lt;executions&gt;</span><br><span class="line">      &lt;execution&gt;</span><br><span class="line">          &lt;phase&gt;package&lt;/phase&gt;</span><br><span class="line">                &lt;goals&gt;</span><br><span class="line">                    &lt;goal&gt;run&lt;/goal&gt;</span><br><span class="line">                &lt;/goals&gt;</span><br><span class="line">          &lt;/execution&gt;</span><br><span class="line">  &lt;/executions&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
+
+<p>运行：选 择pom.xml文件，击右键——&gt;选择 Run As——&gt; Maven build .. , 在Goals框加加入以下命令: clean package<br>7、设置本地仓库：maven根目录-&gt;conf-》settings.xml,将eg:localRepository标签中的路径替换成自己本地仓库的路径<localrepository> D:\mavenRepository</localrepository><br>还需要将conf-》settings.xml复制一份到自己创建的仓库<br>在ecplise的maven下配置global 中选择根目录下的settings.xml，而在user settings中选择自己创建的本地仓库中的settings.xml</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wexin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+            <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">javascript-02</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/19/maven/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/10/18/javascript-02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript-02</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+  <section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'true' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "FTWdDd82dpteNvDea9S5vn4t-gzGzoHsz",
+            app_key: "EKfNcX06SOSwAIatQiBNJ9b6",
+            placeholder: "来发个评论吧，给up一点&#34;tip&#34;",
+            avatar:"monsterid"
+        });
+    }
+</script>
+  </section>
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -234,9 +449,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
