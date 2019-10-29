@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: spring | 小峰blog</title>
+  <title>javascript面向对象 | 小峰blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小峰blog">
-<meta property="og:url" content="http://yoursite.com/tags/spring/index.html">
+  <meta name="description" content="创建对象的几种常用方式 1.使用Object或对象字面量创建对象2.工厂模式创建对象3.构造函数模式创建对象4.原型模式创建对象">
+<meta name="keywords" content="js面向对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript面向对象">
+<meta property="og:url" content="http://yoursite.com/2019/10/29/javascript面向对象/index.html">
 <meta property="og:site_name" content="小峰blog">
+<meta property="og:description" content="创建对象的几种常用方式 1.使用Object或对象字面量创建对象2.工厂模式创建对象3.构造函数模式创建对象4.原型模式创建对象">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-29T01:30:26.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小峰blog">
+<meta name="twitter:title" content="javascript面向对象">
+<meta name="twitter:description" content="创建对象的几种常用方式 1.使用Object或对象字面量创建对象2.工厂模式创建对象3.构造函数模式创建对象4.原型模式创建对象">
   
     <link rel="alternative" href="/atom.xml" title="小峰blog" type="application/atom+xml">
   
@@ -154,60 +159,259 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-javascript面向对象" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/17/spring/" class="archive-article-date">
-  	<time datetime="2019-10-17T10:28:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/17/spring/">spring</a>
+    <h1 class="article-title" itemprop="name">
+      javascript面向对象
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/29/javascript面向对象/" class="archive-article-date">
+  	<time datetime="2019-10-29T00:20:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+</a>
+        
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="创建对象的几种常用方式"><a href="#创建对象的几种常用方式" class="headerlink" title="创建对象的几种常用方式"></a>创建对象的几种常用方式</h3><blockquote>
+<p>1.使用Object或对象字面量创建对象<br>2.工厂模式创建对象<br>3.构造函数模式创建对象<br>4.原型模式创建对象</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="1-使用Object或对象字面量创建对象"><a href="#1-使用Object或对象字面量创建对象" class="headerlink" title="1.使用Object或对象字面量创建对象"></a>1.使用Object或对象字面量创建对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//基本创建对象的方式</span><br><span class="line">var student = new Object();</span><br><span class="line">student.name = &quot;easy&quot;;</span><br><span class="line">student.age = &quot;20&quot;;</span><br><span class="line">//字面量创建</span><br><span class="line">var sutdent = &#123;</span><br><span class="line">  name : &quot;easy&quot;,</span><br><span class="line">  age : 20</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这样看起来似乎就完美了。但是马上我们就会发现一个十分尖锐的问题：当我们要创建同类的student1，student2，…，studentn时，我们不得不将以上的代码重复n次….</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var sutdent1 = &#123;</span><br><span class="line">  name : &quot;easy1&quot;,</span><br><span class="line">  age : 20</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var sutdent2 = &#123;</span><br><span class="line">  name : &quot;easy2&quot;,</span><br><span class="line">  age : 20</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">var sutdentn = &#123;</span><br><span class="line">  name : &quot;easyn&quot;,</span><br><span class="line">  age : 20</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>有个提问？能不能像工厂车间那样，有一个车床就不断生产出对象呢？我们看”工厂模式”。</p>
+<h4 id="2-工厂模式创建对象"><a href="#2-工厂模式创建对象" class="headerlink" title="2.工厂模式创建对象"></a>2.工厂模式创建对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function createStudent(name, age) &#123;</span><br><span class="line">  var obj = new Object();//等价于var obj=&#123;&#125;;</span><br><span class="line">  obj.name = name;</span><br><span class="line">  obj.age = age;</span><br><span class="line">  return obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var student1 = createStudent(&quot;easy1&quot;, 20);</span><br><span class="line">var student2 = createStudent(&quot;easy2&quot;, 20);</span><br><span class="line">...</span><br><span class="line">var studentn = createStudent(&quot;easyn&quot;, 20);</span><br></pre></td></tr></table></figure>
+
+<p>这样一来我们就可以通过createStudent函数源源不断地”生产”对象了。看起来已经高枕无忧了，但贪婪的人类总有不满足于现状的天性：我们不仅希望”产品”的生产可以像工厂车间一般源源不断，我们还想知道生产的产品究竟是哪一种类型的。</p>
+<p>比如说，我们同时又定义了”生产”水果对象的createFruit()函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function createFruit(name, color) &#123;</span><br><span class="line">  var obj = new Object();</span><br><span class="line">  obj.name = name;</span><br><span class="line">  obj.color = color;</span><br><span class="line">  return obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var v1 = createStudent(&quot;easy1&quot;, 20);</span><br><span class="line">var v2 = createFruit(&quot;apple&quot;, &quot;green&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>对于以上代码创建的对象v1、v2，我们用instanceof操作符去检测，他们统统都是Object类型。我们的当然不满足于此，我们希望v1是Student类型的，而v2是Fruit类型的。为了实现这个目标，我们可以用自定义构造函数的方法来创建对象</p>
+<h4 id="3-构造函数模式创建对象"><a href="#3-构造函数模式创建对象" class="headerlink" title="3.构造函数模式创建对象"></a>3.构造函数模式创建对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function Student(name, age) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  this.alertName = function()&#123;</span><br><span class="line">    alert(this.name)</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Fruit(name, color) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.color = color;</span><br><span class="line">  this.alertName = function()&#123;</span><br><span class="line">    alert(this.name)</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样我们再分别创建Student和Fruit的对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var v1 = new Student(&quot;easy&quot;, 20);</span><br><span class="line">var v2 = new Fruit(&quot;apple&quot;, &quot;green&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>这时我们再来用instanceof操作符来检测以上对象类型就可以区分出Student以及Fruit了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">alert(v1 instanceof Student);  //true</span><br><span class="line">alert(v2 instanceof Student);  //false</span><br><span class="line">alert(v1 instanceof Fruit);  //false</span><br><span class="line">alert(v2 instanceof Fruit);  //true</span><br><span class="line"></span><br><span class="line">alert(v1 instanceof Object);  //true 任何对象均继承自Object</span><br><span class="line">alert(v2 instanceof Object);  //true 任何对象均继承自Object</span><br></pre></td></tr></table></figure>
+
+<p>这样的话，看起来似乎好点了，但是问题来了，就是每个基于Student创建的对象都会重复的保存这些完全相同的方法，带来不必要的浪费：请看如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Student(name, age) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  this.alertName = alertName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function alertName() &#123;</span><br><span class="line">  alert(this.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var stu1 = new Student(&quot;easy1&quot;, 20);</span><br><span class="line">var stu2 = new Student(&quot;easy2&quot;, 20);</span><br></pre></td></tr></table></figure>
+
+<p>这种问题该如何解决呢，这时候我们就需要用到原型了</p>
+<h4 id="4-原型的模式创建对象"><a href="#4-原型的模式创建对象" class="headerlink" title="4.原型的模式创建对象"></a>4.原型的模式创建对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Student() &#123;</span><br><span class="line">    this.name = &apos;easy&apos;;</span><br><span class="line">    this.age = 20;</span><br><span class="line">&#125;</span><br><span class="line">Student.prototype.alertName = function()&#123;</span><br><span class="line">    alert(this.name);</span><br><span class="line">&#125;;</span><br><span class="line">var stu1 = new Student();</span><br><span class="line">var stu2 = new Student();</span><br><span class="line">stu1.alertName();  //easy</span><br><span class="line">stu2.alertName();  //easy</span><br><span class="line"></span><br><span class="line">alert(stu1.alertName == stu2.alertName);  //true 二者共享同一函数</span><br></pre></td></tr></table></figure>
+
+<p>通过上述代码，可以发现，我们并没有在构造函数中定义alertName方法，但是Student的原型对象添加了该方法后，Student的每个对象都可以使用，解决了内存浪费的问题，</p>
+<h4 id="面向对象的继承"><a href="#面向对象的继承" class="headerlink" title="面向对象的继承"></a>面向对象的继承</h4><ul>
+<li>1.利用原型对象实现继承 (如上述的代码)<br>继承：父对象的成员，子对象不用重复创建，也可以直接使用<br>why：节省内存，又能代码重复<br>when：只要一类字对象，需要相同的属性或功能的父对象重定义一次即可<br>how：js中继承都是继承的原型对象</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wexin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+            <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js面向对象</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/29/javascript面向对象/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/10/19/maven/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">maven</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建对象的几种常用方式"><span class="toc-number">1.</span> <span class="toc-text">创建对象的几种常用方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-使用Object或对象字面量创建对象"><span class="toc-number">1.1.</span> <span class="toc-text">1.使用Object或对象字面量创建对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-工厂模式创建对象"><span class="toc-number">1.2.</span> <span class="toc-text">2.工厂模式创建对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-构造函数模式创建对象"><span class="toc-number">1.3.</span> <span class="toc-text">3.构造函数模式创建对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-原型的模式创建对象"><span class="toc-number">1.4.</span> <span class="toc-text">4.原型的模式创建对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#面向对象的继承"><span class="toc-number">1.5.</span> <span class="toc-text">面向对象的继承</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+  <section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'true' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "FTWdDd82dpteNvDea9S5vn4t-gzGzoHsz",
+            app_key: "EKfNcX06SOSwAIatQiBNJ9b6",
+            placeholder: "来发个评论吧，给up一点&#34;tip&#34;",
+            avatar:"monsterid"
+        });
+    }
+</script>
+  </section>
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -234,9 +438,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
