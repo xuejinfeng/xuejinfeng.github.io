@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>javascript的知识点 | 小峰blog</title>
+  <title>node入门 | 小峰blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript的数据类型 undefined  表示的是未定义 boolean   值只有true和false string  字符串类型 number  数值类型 object  对象类型  null是对象类型 funtion   是一种特殊的数据类型">
-<meta name="keywords" content="javascript">
+  <meta name="description" content="node是什么 简单的说 Node.js 就是运行在服务端的 JavaScript">
+<meta name="keywords" content="node入门">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript的知识点">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/javascript的知识点/index.html">
+<meta property="og:title" content="node入门">
+<meta property="og:url" content="http://yoursite.com/2019/11/07/node入门/index.html">
 <meta property="og:site_name" content="小峰blog">
-<meta property="og:description" content="javascript的数据类型 undefined  表示的是未定义 boolean   值只有true和false string  字符串类型 number  数值类型 object  对象类型  null是对象类型 funtion   是一种特殊的数据类型">
+<meta property="og:description" content="node是什么 简单的说 Node.js 就是运行在服务端的 JavaScript">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-15T09:02:24.208Z">
+<meta property="og:updated_time" content="2019-11-07T06:03:35.153Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript的知识点">
-<meta name="twitter:description" content="javascript的数据类型 undefined  表示的是未定义 boolean   值只有true和false string  字符串类型 number  数值类型 object  对象类型  null是对象类型 funtion   是一种特殊的数据类型">
+<meta name="twitter:title" content="node入门">
+<meta name="twitter:description" content="node是什么 简单的说 Node.js 就是运行在服务端的 JavaScript">
   
     <link rel="alternative" href="/atom.xml" title="小峰blog" type="application/atom+xml">
   
@@ -159,20 +159,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-javascript的知识点" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-node入门" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      javascript的知识点
+      node入门
     </h1>
   
 
         
-        <a href="/2019/10/14/javascript的知识点/" class="archive-article-date">
-  	<time datetime="2019-10-14T11:23:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-14</time>
+        <a href="/2019/11/07/node入门/" class="archive-article-date">
+  	<time datetime="2019-11-07T06:02:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
 </a>
         
         
@@ -184,70 +184,250 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="javascript的数据类型"><a href="#javascript的数据类型" class="headerlink" title="javascript的数据类型"></a>javascript的数据类型</h2><ul>
-<li>undefined  表示的是未定义</li>
-<li>boolean   值只有true和false</li>
-<li>string  字符串类型</li>
-<li>number  数值类型</li>
-<li>object  对象类型  null是对象类型</li>
-<li>funtion   是一种特殊的数据类型<a id="more"></a></li>
-<li>数据类型可通过typeof，检测得到，typeof是一个操作符，并不是一个函数  </li>
+        <h3 id="node是什么"><a href="#node是什么" class="headerlink" title="node是什么"></a>node是什么</h3><blockquote>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript<br>    <a id="more"></a><br>    1.node的第一个程序，通过node 文件名运行程序<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;hello node&quot;); //文件名helloworld.js</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<pre><code>保存文件，并通过 node命令来执行：
+&gt; node helloworld.js</code></pre><h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><ul>
+<li>在Node中，一个js文件就是一个模块</li>
+<li>在Node中，每一个js文件中的js代码都是独立运行在一个函数中<br>而不是全局作用域，所以一个模块的中的变量和函数在其他模块中无法访问</li>
+<li>我们可以通过exports来向外部暴露变量和方法只需要将需要暴露给外部的变量或方法设置为<br>exports的  属性即可</li>
+<li>引入模块：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">     /*</span><br><span class="line">在node中，通过require()函数来引入外部的模块</span><br><span class="line">	require()可以传递一个文件的路径作为参数，node将会自动根据该路径来引入外部模块</span><br><span class="line">	这里路径，如果使用相对路径，必须以.或..开头</span><br><span class="line"></span><br><span class="line">使用require()引入模块以后，该函数会返回一个对象，这个对象代表的是引入的模块</span><br><span class="line"></span><br><span class="line">我们使用require()引入外部模块时，使用的就是模块标识，我们可以通过模块标识来找到指定的模块</span><br><span class="line">- 模块分成两大类</span><br><span class="line">	核心模块</span><br><span class="line">		- 由node引擎提供的模块</span><br><span class="line">		- 核心模块的标识就是，模块的名字</span><br><span class="line">	文件模块</span><br><span class="line">		- 由用户自己创建的模块</span><br><span class="line">		- 文件模块的标识就是文件的路径（绝对路径，相对路径）</span><br><span class="line">			相对路径使用.或..开头</span><br><span class="line"></span><br><span class="line">  */</span><br><span class="line"> </span><br><span class="line"> var math = require(&quot;./math&quot;);</span><br><span class="line"> var fs = require(&quot;fs&quot;);</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<h2 id="amp-amp-的坑"><a href="#amp-amp-的坑" class="headerlink" title="&amp;&amp;的坑"></a>&amp;&amp;的坑</h2><table>
-<thead>
-<tr>
-<th>第一项</th>
-<th align="right">第二项</th>
-<th align="center">结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>true</td>
-<td align="right">true</td>
-<td align="center">true</td>
-</tr>
-<tr>
-<td>5</td>
-<td align="right">4</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td>0</td>
-<td align="right">5</td>
-<td align="center">0</td>
-</tr>
-</tbody></table>
+<h3 id="node全局变量是什么呢？"><a href="#node全局变量是什么呢？" class="headerlink" title="node全局变量是什么呢？"></a>node全局变量是什么呢？</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">var a = 10;</span><br><span class="line">/*</span><br><span class="line">	在node中有一个全局对象 global，它的作用和网页中window类似</span><br><span class="line">		在全局中创建的变量都会作为global的属性保存</span><br><span class="line">		在全局中创建的函数都会作为global的方法保存</span><br><span class="line"></span><br><span class="line">	当node在执行模块中的代码时，它会首先在代码的最顶部，添加如下代码</span><br><span class="line"> 			function (exports, require, module, __filename, __dirname) &#123;</span><br><span class="line"></span><br><span class="line"> 	在代码的最底部，添加如下代码</span><br><span class="line"> 			&#125;</span><br><span class="line"></span><br><span class="line"> 	实际上模块中的代码都是包装在一个函数中执行的，并且在函数执行时，同时传递进了5个实参</span><br><span class="line">		 exports</span><br><span class="line">		 	- 该对象用来将变量或函数暴露到外部</span><br><span class="line"></span><br><span class="line">		 require</span><br><span class="line">		 	- 函数，用来引入外部的模块</span><br><span class="line"></span><br><span class="line">		 module</span><br><span class="line">		 	- module代表的是当前模块本身</span><br><span class="line">		 	- exports就是module的属性</span><br><span class="line">		 	- 既可以使用 exports 导出，也可以使用module.exports导出</span><br><span class="line"></span><br><span class="line">		 __filename</span><br><span class="line"> 			C:\Users\lilichao\WebstormProjects\class0705\01.node\04.module.js</span><br><span class="line"> 			- 当前模块的完整路径</span><br><span class="line"></span><br><span class="line">	  	 __dirname</span><br><span class="line"> 			C:\Users\lilichao\WebstormProjects\class0705\01.node</span><br><span class="line"> 			- 当前模块所在文件夹的完整路径</span><br><span class="line"></span><br><span class="line">* */</span><br><span class="line">//console.log(global.a);</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">	arguments.callee</span><br><span class="line">		- 这个属性保存的是当前执行的函数对象</span><br><span class="line">* */</span><br><span class="line">//console.log(arguments.callee + &quot;&quot;);</span><br><span class="line">//console.log(arguments.length);</span><br><span class="line"></span><br><span class="line">//console.log(exports);</span><br><span class="line">//console.log(module.exports == exports);</span><br><span class="line"></span><br><span class="line">console.log(__dirname);</span><br></pre></td></tr></table></figure>
+
+<h3 id="exports-和-module-exports"><a href="#exports-和-module-exports" class="headerlink" title="exports 和 module.exports"></a>exports 和 module.exports</h3><ul>
+<li><p>通过exports只能使用.的方式来向外暴露内部变量</p>
+<pre><code>exports.xxx = xxx</code></pre></li>
+<li><p>而module.exports既可以通过.的形式，也可以直接赋值</p>
+<pre><code>module.exports.xxx = xxxx
+module.exports = {}</code></pre><h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><blockquote>
+<p>npm init //建议每次创建新的项目的时候一定要先执行这个命令来生成package.json，否则会在装包的时候把包装错位置，通过npm命令安装包，都会存放在node_moudules这个文件夹中<br>npm remove 包名 //删除包<br>npm install //每次拿到项目，npm install会自动下载依赖包<br>npm install –save  //安装包，并注册依赖到package.json中</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h3><ul>
+<li><p>http</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> 		  var http = require(&apos;http&apos;);</span><br><span class="line">  http.createServer(function (request, response) &#123;</span><br><span class="line"></span><br><span class="line">    // 发送 HTTP 头部 </span><br><span class="line">    // HTTP 状态值: 200 : OK</span><br><span class="line">    // 内容类型: text/plain</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;: &apos;text/plain&apos;&#125;);</span><br><span class="line"></span><br><span class="line">    // 发送响应数据 &quot;Hello World&quot;</span><br><span class="line">    //响应结束end,必须在响应完以后结束响应，否则会一直等待</span><br><span class="line">    response.end(&apos;Hello World\n&apos;);</span><br><span class="line">&#125;).listen(8888);</span><br><span class="line"></span><br><span class="line">// 终端打印如下信息</span><br><span class="line">console.log(&apos;Server running at http://127.0.0.1:8888/&apos;);</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>注意1：当数值参与逻辑与运算时，结果为true，那么会返回的会是第二个为真的值；如果结果为false，返回的会是第一个为假的值。</li>
-<li>注意2:数值类型的，所有的非零数字都为true，反之为假<ul>
-<li>当结果为真时，返回第二个为真的值</li>
-<li>当结果为假时，返回第一个为假的值</li>
+<li>分析Node.js 的 HTTP 服务器：<ul>
+<li>第一行请求（require）Node.js 自带的 http 模块，并且把它赋值给 http 变量</li>
+<li>接下来我们调用 http 模块提供的函数： createServer 。这个函数会返回 一个对象，这个对象有一个叫做 listen 的方法，这个方法有一个数值参数， 指定这个 HTTP 服务器监听的端口号。</li>
 </ul>
 </li>
-<li>注意3：<ul>
-<li>如果第一个操作符是null ，返回null </li>
-<li>如果第一个操作符是NaN ，返回NaN </li>
-<li>如果第一个操作符是undefined ，返回undefined </li>
+<li>例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  	const http = require(&quot;http&quot;);</span><br><span class="line">var server = http.createServer(function(req, res) &#123;</span><br><span class="line">   console.log(req.url)</span><br><span class="line">   switch (req.url) &#123;</span><br><span class="line">       case &quot;/1.html&quot;:</span><br><span class="line">           res.write(&quot;1111111111&quot;)</span><br><span class="line">           break</span><br><span class="line">       case &quot;/2.html&quot;:</span><br><span class="line">           res.write(&quot;2222222&quot;)</span><br><span class="line">           break</span><br><span class="line">       default:</span><br><span class="line">           res.write(&quot;404&quot;)</span><br><span class="line">   &#125;</span><br><span class="line">   res.end();</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(8080)</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 </li>
-<li>举例：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log( 5 &amp;&amp; 4 );//当结果为真时，返回第二个为真的值4</span><br><span class="line">console.log( 0 &amp;&amp; 4 );//当结果为假时，返回第一个为假的值0</span><br></pre></td></tr></table></figure>
-
-<h2 id="的坑"><a href="#的坑" class="headerlink" title="||的坑"></a>||的坑</h2><ul>
-<li>注意1：当结果为真时，返回第一个为真的值</li>
-<li>注意2：当结果为假时，返回第二个为假的值</li>
-<li>注意3：<ul>
-<li>如果两个操作符都是undefined ，返回undefined </li>
-<li>如果两个操作符都是null ，返回null </li>
-<li>如果两个操作符都是NaN ，返回NaN</li>
-</ul>
+<h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><ul>
+<li><p>node供一组类似 UNIX（POSIX）标准的文件操作API。 Node 导入文件系统模块(fs)语法如下所示：</p>
+<blockquote>
+<p>var fs = require(“fs”)</p>
+</blockquote>
 </li>
-<li>举例：</li>
+<li><p>读取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  var fs = require(&quot;fs&quot;);</span><br><span class="line">// 异步读取</span><br><span class="line">fs.readFile(&apos;input.txt&apos;, function (err, data) &#123;</span><br><span class="line">   if (err) &#123;</span><br><span class="line">       return console.error(err);</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(&quot;异步读取: &quot; + data.toString());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 同步读取</span><br><span class="line">var data = fs.readFileSync(&apos;input.txt&apos;);</span><br><span class="line">console.log(&quot;同步读取: &quot; + data.toString());</span><br><span class="line"></span><br><span class="line">console.log(&quot;程序执行完毕。&quot;);</span><br><span class="line">  ``` </span><br><span class="line"> - 写入</span><br></pre></td></tr></table></figure>
+
+<p>   var fs = require(“fs”);<br>console.log(“准备写入文件”);<br>//writeFile的回调函数的参数只有一个err，错误就抛出，正确的话写入<br>fs.writeFile(‘input.txt’, ‘我是通 过fs.writeFile 写入文件的内容’,  function(err) {<br>   if (err) {</p>
+<pre><code>return console.error(err);</code></pre><p>   }<br>   console.log(“数据写入成功！”);<br>   console.log(“——–我是分割线————-“)<br>   console.log(“读取写入的数据！”);<br>   //<br>   fs.readFile(‘input.txt’, function (err, data) {</p>
+<pre><code>if (err) {
+   return console.error(err);
+}
+console.log(&quot;异步读取文件数据: &quot; + data.toString());</code></pre><p>   });<br>});</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### get/post请求</span><br><span class="line"> + get请求</span><br></pre></td></tr></table></figure>
+
+<p>var http = require(‘http’);<br>var url = require(‘url’);<br>var util = require(‘util’);</p>
+<p>http.createServer(function(req, res){</p>
+<pre><code>//数据编码是 utf-8 格式 ,防止中文乱码
+res.writeHead(200, {&apos;Content-Type&apos;: &apos;text/plain;charset=utf-8&apos;});
+//解决跨域问题
+res.setHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);
+// 解析 url 参数
+//url.parse(路径,boolean)
+//第二个参数默认是false,url为字符串类型；如果为true，由原来的字符串的url解析成对象
+//query是代码url的参数内容
+var params = url.parse(req.url, true).query;
+res.write(&quot;网站名：&quot; + params.name);
+res.write(&quot;\n&quot;);
+res.write(&quot;网站 URL：&quot; + params.url);
+res.end();</code></pre><p>}).listen(3000);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ POST请求</span><br></pre></td></tr></table></figure>
+
+<p> var http = require(‘http’);<br>var querystring = require(‘querystring’);<br>var util = require(‘util’);</p>
+<p>http.createServer(function(req, res){</p>
+<pre><code>// 定义了一个post变量，用于暂存请求体的信息
+var post = &apos;&apos;;     
+
+// 通过req的data事件监听函数，每当接受到请求体的数据，就累加到post变量中
+req.on(&apos;data&apos;, function(chunk){    
+    post += chunk;
+});
+
+// 在end事件触发后，通过querystring.parse将post解析为真正的POST请求格式，然后向客户端返回。
+req.on(&apos;end&apos;, function(){  
+    //  
+    post = querystring.parse(post);
+    //util.inspect将任意的对象转化为字符串形式
+    res.end(util.inspect(post));
+});</code></pre><p>}).listen(3000);</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### Express框架</span><br><span class="line"> - 安装</span><br><span class="line">   cnpm install express --save()</span><br><span class="line">   以下几个重要的模块是需要与express框架一起安装的：</span><br><span class="line">   - body-parser中间件,用于处理jSON,Raw,Text和URL编码的数据。</span><br><span class="line">   - cookie-parser-这就是一个解析Cookie的工具。通过req.cookies可以取到传过来的cookie。并把它们转成对象。</span><br><span class="line">   - multer - node.js 中间件，用于处理enctype=&quot;multipart/form-data&quot;（设置表单的MIME编码）的表单数据。</span><br><span class="line">      &gt; cnpm install body-parser --save</span><br><span class="line">	  &gt; cnpm install cookie-parser --save</span><br><span class="line">      &gt; cnpm install multer --save</span><br><span class="line"> - 使用（第一个 Express 框架实例）</span><br></pre></td></tr></table></figure>
+
+<p>//express_demo.js 文件<br>var express = require(‘express’);<br>var app = express();</p>
+<p>app.get(‘/‘, function (req, res) {</p>
+<pre><code>//代替了之前的res.write</code></pre><p>   res.send(‘Hello World’);<br>})<br>//可以简写为qpp.listen(8081)，但为了让用户更好的体验，给个提示加一个回调函数<br>var server = app.listen(8081, function () {</p>
+<p>  var host = server.address().address<br>  var port = server.address().port</p>
+<p>  console.log(“应用实例，访问地址为 http://%s:%s”, host, port)</p>
+<p>})</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 路由</span><br></pre></td></tr></table></figure>
+
+<p>var express = require(‘express’);<br>var app = express();</p>
+<p>//  主页输出 “Hello World”<br>app.get(‘/‘, function (req, res) {<br>   console.log(“主页 GET 请求”);<br>   res.send(‘Hello GET’);<br>})</p>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- console.log( 5 || 4 );//当结果为真时，返回第一个为真的值5`</span><br><span class="line">- console.log( 0 || 0 );//当结果为假时，返回第二个为假的值0`</span><br></pre></td></tr></table></figure>
+<pre><code>//  POST 请求
+app.post(&apos;/&apos;, function (req, res) {
+   console.log(&quot;主页 POST 请求&quot;);
+   res.send(&apos;Hello POST&apos;);
+})
+
+//  /del_user 页面响应
+app.get(&apos;/del_user&apos;, function (req, res) {
+   console.log(&quot;/del_user 响应 DELETE 请求&quot;);
+   res.send(&apos;删除页面&apos;);
+})
+
+//  /list_user 页面 GET 请求
+app.get(&apos;/list_user&apos;, function (req, res) {
+   console.log(&quot;/list_user GET 请求&quot;);
+   res.send(&apos;用户列表页面&apos;);
+})
+
+// 对页面 abcd, abxcd, ab123cd, 等响应 GET 请求
+app.get(&apos;/ab*cd&apos;, function(req, res) {   
+   console.log(&quot;/ab*cd GET 请求&quot;);
+   res.send(&apos;正则匹配&apos;);
+})
 
 
+var server = app.listen(8081, function () {
+
+  var host = server.address().address
+  var port = server.address().port
+
+  console.log(&quot;应用实例，访问地址为 http://%s:%s&quot;, host, port)
+
+})</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 静态文件</span><br><span class="line"> Express 提供了内置的中间件express.static来设置静态文件如图片,CSS,JavaScript等.你可以这样做</span><br><span class="line"> &gt; app.use(&apos;/public&apos;, express.static(&apos;public&apos;));</span><br><span class="line"> 项目的结构</span><br><span class="line"> &gt; node_modules</span><br><span class="line"> &gt; server.js</span><br><span class="line"> &gt;	public/</span><br><span class="line"> &gt;	public/images</span><br><span class="line"> &gt; public/images/logo.png</span><br></pre></td></tr></table></figure>
+
+<p>  var express = require(‘express’);<br>    var app = express()<br>    app.use(‘/public’, express.static(‘public’));<br>    app.get(‘/‘, function (req, res) {<br>       res.send(‘Hello World’);<br>    })<br>    var server = app.listen(8081, function () {<br>      var host = server.address().address<br>      var port = server.address().port<br>      console.log(“应用实例，访问地址为 http://%s:%s”, host, port)<br>    })<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> 在浏览器中访问 http://127.0.0.1:8081/public/images/logo.png</span><br><span class="line">- 文件的上传</span><br><span class="line">  - 以下我们创建一个用于上传文件的表单，使用 POST 方法，表单 enctype 属性设置为 multipart/form-data。</span><br><span class="line">   html</span><br></pre></td></tr></table></figure></p>
+<pre><code>   &lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;文件上传表单&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;文件上传：&lt;/h3&gt;
+选择一个文件上传: &lt;br /&gt;
+&lt;form action=&quot;/file_upload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+&lt;input type=&quot;file&quot; name=&quot;image&quot; size=&quot;50&quot; /&gt;
+&lt;br /&gt;
+&lt;input type=&quot;submit&quot; value=&quot;上传文件&quot; /&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">js代码server.js</span><br></pre></td></tr></table></figure>
+
+   var express = require(&apos;express&apos;);
+var app = express();
+var fs = require(&quot;fs&quot;);
+
+var bodyParser = require(&apos;body-parser&apos;);
+var multer  = require(&apos;multer&apos;);
+
+app.use(&apos;/public&apos;, express.static(&apos;public&apos;));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(multer({ dest: &apos;/tmp/&apos;}).array(&apos;image&apos;));
+
+app.get(&apos;/index.htm&apos;, function (req, res) {
+   res.sendFile( __dirname + &quot;/&quot; + &quot;index.htm&quot; );
+})
+
+app.post(&apos;/file_upload&apos;, function (req, res) {
+
+   console.log(req.files[0]);  // 上传的文件信息
+
+   var des_file = __dirname + &quot;/&quot; + req.files[0].originalname;
+   fs.readFile( req.files[0].path, function (err, data) {
+        fs.writeFile(des_file, data, function (err) {
+         if( err ){
+              console.log( err );
+         }else{
+               response = {
+                   message:&apos;File uploaded successfully&apos;, 
+                   filename:req.files[0].originalname
+              };
+          }
+          console.log( response );
+          res.end( JSON.stringify( response ) );
+       });
+   });
+})
+
+var server = app.listen(8081, function () {
+
+  var host = server.address().address
+  var port = server.address().port
+
+  console.log(&quot;应用实例，访问地址为 http://%s:%s&quot;, host, port)
+
+})
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  	文件上传的概述详细</span><br><span class="line">  	要点：</span><br><span class="line">(1) enctype的三种类型：</span><br><span class="line">① enctype=&quot;application/x-www-form-urlencoded&quot; 用于上传哈希值（eg: ?a=12&amp;b=5&amp;c=8）;</span><br><span class="line">② enctype=&quot;multipart/form-data&quot; 用于上传文件；</span><br><span class="line">③ enctype=&quot;text-plain&quot; 用于上传文本；</span><br><span class="line">(2) &lt;input type=&quot;file&quot; name=&quot;file&quot; /&gt; 此处的input，必须要有name属性（后台选择谁上传</span><br></pre></td></tr></table></figure>
+
+   const express = require(&apos;express&apos;);
+const bodyParser = require(&apos;body-parser&apos;);
+const fs = require(&apos;fs&apos;);
+const multer = require(&apos;multer&apos;);
+const pathLib = require(&apos;path&apos;);
+const app = express();
+
+// body-parser 用于解析post数据  application/x-www.form-urlencoded
+app.use(bodyParser.urlencoded({extended: false}));
+
+// multer 用于解析post文件  multipart/form-data
+// var objMulter = multer({dest: &apos;./dist&apos;}).array(&apos;file&apos;);
+// 或者 var objMulter = multer({dest: &apos;./dist&apos;}).any();
+app.use(multer({dest: &apos;./dist&apos;}).array(&apos;file&apos;));  //此处的array(&apos;file&apos;)对应html部分的name
+// app.use(objMulter );
+
+app.post(&apos;/file_upload&apos;, function(req, res){
+    console.log(req.files[0]);
+    fs.readFile(req.files[0].path, function(err, data){
+        if(err){
+            console.log(&apos;Error&apos;);
+        }else{
+            var dir_file = __dirname + &apos;/&apos; + req.files[0].originalname
+            // console.log(dir_file);
+            fs.writeFile(dir_file, data, function(err){
+                var obj = {
+                    msg: &apos;upload success&apos;,
+                    filename: req.files[0].originalname
+                }
+                console.log(obj);
+                res.send(JSON.stringify(obj));
+            })
+        }
+    })
+})
+var server = app.listen(8081, function(){
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log(&apos;Server is running at http://localhost:8081&apos;);
+})
+   ```</code></pre>
       
 
       
@@ -289,7 +469,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">node入门</a>
         		</li>
       		
 		</ul>
@@ -345,7 +525,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/14/javascript的知识点/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/07/node入门/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -359,18 +539,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/15/Canvas/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Canvas
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/14/svg/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">svg</div>
+    <a href="/2019/10/29/javascript面向对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript面向对象</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -397,7 +568,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript的数据类型"><span class="toc-number">1.</span> <span class="toc-text">javascript的数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#amp-amp-的坑"><span class="toc-number">2.</span> <span class="toc-text">&amp;&amp;的坑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#的坑"><span class="toc-number">3.</span> <span class="toc-text">||的坑</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#node是什么"><span class="toc-number">1.</span> <span class="toc-text">node是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块化"><span class="toc-number">2.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node全局变量是什么呢？"><span class="toc-number">3.</span> <span class="toc-text">node全局变量是什么呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exports-和-module-exports"><span class="toc-number">4.</span> <span class="toc-text">exports 和 module.exports</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm"><span class="toc-number">5.</span> <span class="toc-text">npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建服务器"><span class="toc-number">6.</span> <span class="toc-text">创建服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件系统"><span class="toc-number">7.</span> <span class="toc-text">文件系统</span></a></li></ol>
                     </div>
                 </span>
             </div>
