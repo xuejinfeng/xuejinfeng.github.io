@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="小峰blog">
 <meta property="og:description" content="node是什么 简单的说 Node.js 就是运行在服务端的 JavaScript">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-07T11:24:04.437Z">
+<meta property="og:updated_time" content="2019-11-08T00:42:50.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node入门">
 <meta name="twitter:description" content="node是什么 简单的说 Node.js 就是运行在服务端的 JavaScript">
@@ -188,7 +188,7 @@
 <p>简单的说 Node.js 就是运行在服务端的 JavaScript<br>    <a id="more"></a><br>    1.node的第一个程序，通过node 文件名运行程序<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;hello node&quot;); //文件名helloworld.js</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <pre><code>保存文件，并通过 node命令来执行：
-&gt; node helloworld.js</code></pre><h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><ul>
+node helloworld.js</code></pre><h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><ul>
 <li>在Node中，一个js文件就是一个模块</li>
 <li>在Node中，每一个js文件中的js代码都是独立运行在一个函数中<br>而不是全局作用域，所以一个模块的中的变量和函数在其他模块中无法访问</li>
 <li>我们可以通过exports来向外部暴露变量和方法只需要将需要暴露给外部的变量或方法设置为<br>exports的  属性即可</li>
@@ -199,11 +199,10 @@
 <h3 id="node全局变量是什么呢？"><a href="#node全局变量是什么呢？" class="headerlink" title="node全局变量是什么呢？"></a>node全局变量是什么呢？</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">var a = 10;</span><br><span class="line">/*</span><br><span class="line">	在node中有一个全局对象 global，它的作用和网页中window类似</span><br><span class="line">		在全局中创建的变量都会作为global的属性保存</span><br><span class="line">		在全局中创建的函数都会作为global的方法保存</span><br><span class="line"></span><br><span class="line">	当node在执行模块中的代码时，它会首先在代码的最顶部，添加如下代码</span><br><span class="line"> 			function (exports, require, module, __filename, __dirname) &#123;</span><br><span class="line"></span><br><span class="line"> 	在代码的最底部，添加如下代码</span><br><span class="line"> 			&#125;</span><br><span class="line"></span><br><span class="line"> 	实际上模块中的代码都是包装在一个函数中执行的，并且在函数执行时，同时传递进了5个实参</span><br><span class="line">		 exports</span><br><span class="line">		 	- 该对象用来将变量或函数暴露到外部</span><br><span class="line"></span><br><span class="line">		 require</span><br><span class="line">		 	- 函数，用来引入外部的模块</span><br><span class="line"></span><br><span class="line">		 module</span><br><span class="line">		 	- module代表的是当前模块本身</span><br><span class="line">		 	- exports就是module的属性</span><br><span class="line">		 	- 既可以使用 exports 导出，也可以使用module.exports导出</span><br><span class="line"></span><br><span class="line">		 __filename</span><br><span class="line"> 			C:\Users\lilichao\WebstormProjects\class0705\01.node\04.module.js</span><br><span class="line"> 			- 当前模块的完整路径</span><br><span class="line"></span><br><span class="line">	  	 __dirname</span><br><span class="line"> 			C:\Users\lilichao\WebstormProjects\class0705\01.node</span><br><span class="line"> 			- 当前模块所在文件夹的完整路径</span><br><span class="line"></span><br><span class="line">* */</span><br><span class="line">//console.log(global.a);</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">	arguments.callee</span><br><span class="line">		- 这个属性保存的是当前执行的函数对象</span><br><span class="line">* */</span><br><span class="line">//console.log(arguments.callee + &quot;&quot;);</span><br><span class="line">//console.log(arguments.length);</span><br><span class="line"></span><br><span class="line">//console.log(exports);</span><br><span class="line">//console.log(module.exports == exports);</span><br><span class="line"></span><br><span class="line">console.log(__dirname);</span><br></pre></td></tr></table></figure>
 
 <h3 id="exports-和-module-exports"><a href="#exports-和-module-exports" class="headerlink" title="exports 和 module.exports"></a>exports 和 module.exports</h3><ul>
-<li><p>通过exports只能使用.的方式来向外暴露内部变量</p>
-<pre><code>exports.xxx = xxx</code></pre></li>
-<li><p>而module.exports既可以通过.的形式，也可以直接赋值</p>
-<pre><code>module.exports.xxx = xxxx
-module.exports = {}</code></pre><h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><blockquote>
+<li><p>通过exports只能使用.的方式来向外暴露内部变量<br>exports.xxx = xxx</p>
+</li>
+<li><p>而module.exports既可以通过.的形式，也可以直接赋值<br>module.exports.xxx = xxxx<br>module.exports = {}</p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><blockquote>
 <p>npm init //建议每次创建新的项目的时候一定要先执行这个命令来生成package.json，否则会在装包的时候把包装错位置，通过npm命令安装包，都会存放在node_moudules这个文件夹中<br>npm remove 包名 //删除包<br>npm install //每次拿到项目，npm install会自动下载依赖包<br>npm install –save  //安装包，并注册依赖到package.json中</p>
 </blockquote>
 </li>
@@ -229,9 +228,7 @@ module.exports = {}</code></pre><h3 id="npm"><a href="#npm" class="headerlink" t
 <blockquote>
 <p>var fs = require(“fs”)</p>
 </blockquote>
-</li>
-<li><p>读取</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  var fs = require(&quot;fs&quot;);</span><br><span class="line">// 异步读取</span><br><span class="line">fs.readFile(&apos;input.txt&apos;, function (err, data) &#123;</span><br><span class="line">   if (err) &#123;</span><br><span class="line">       return console.error(err);</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(&quot;异步读取: &quot; + data.toString());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 同步读取</span><br><span class="line">var data = fs.readFileSync(&apos;input.txt&apos;);</span><br><span class="line">console.log(&quot;同步读取: &quot; + data.toString());</span><br><span class="line"></span><br><span class="line">console.log(&quot;程序执行完毕。&quot;);</span><br><span class="line">  ``` </span><br><span class="line"> - 写入</span><br></pre></td></tr></table></figure>
+<h4 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  var fs = require(&quot;fs&quot;);</span><br><span class="line">// 异步读取</span><br><span class="line">fs.readFile(&apos;input.txt&apos;, function (err, data) &#123;</span><br><span class="line">   if (err) &#123;</span><br><span class="line">       return console.error(err);</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(&quot;异步读取: &quot; + data.toString());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 同步读取</span><br><span class="line">var data = fs.readFileSync(&apos;input.txt&apos;);</span><br><span class="line">console.log(&quot;同步读取: &quot; + data.toString());</span><br><span class="line"></span><br><span class="line">console.log(&quot;程序执行完毕。&quot;);</span><br><span class="line">  ``` </span><br><span class="line"> #### 写入</span><br></pre></td></tr></table></figure>
 
 <p>   var fs = require(“fs”);<br>console.log(“准备写入文件”);<br>//writeFile的回调函数的参数只有一个err，错误就抛出，正确的话写入<br>fs.writeFile(‘input.txt’, ‘我是通 过fs.writeFile 写入文件的内容’,  function(err) {<br>   if (err) {</p>
 <pre><code>return console.error(err);</code></pre><p>   }<br>   console.log(“数据写入成功！”);<br>   console.log(“——–我是分割线————-“)<br>   console.log(“读取写入的数据！”);<br>   //<br>   fs.readFile(‘input.txt’, function (err, data) {</p>
@@ -239,7 +236,7 @@ module.exports = {}</code></pre><h3 id="npm"><a href="#npm" class="headerlink" t
    return console.error(err);
 }
 console.log(&quot;异步读取文件数据: &quot; + data.toString());</code></pre><p>   });<br>});</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### get/post请求</span><br><span class="line"> + get请求</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### get/post请求</span><br><span class="line"> #### get请求</span><br></pre></td></tr></table></figure>
 
 <p>var http = require(‘http’);<br>var url = require(‘url’);<br>var util = require(‘util’);</p>
 <p>http.createServer(function(req, res){</p>
@@ -256,7 +253,7 @@ res.write(&quot;网站名：&quot; + params.name);
 res.write(&quot;\n&quot;);
 res.write(&quot;网站 URL：&quot; + params.url);
 res.end();</code></pre><p>}).listen(3000);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ POST请求</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### POST请求</span><br></pre></td></tr></table></figure>
 
 <p> var http = require(‘http’);<br>var querystring = require(‘querystring’);<br>var util = require(‘util’);</p>
 <p>http.createServer(function(req, res){</p>
@@ -275,7 +272,7 @@ req.on(&apos;end&apos;, function(){
     //util.inspect将任意的对象转化为字符串形式
     res.end(util.inspect(post));
 });</code></pre><p>}).listen(3000);</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### Express框架</span><br><span class="line"> - 安装</span><br><span class="line">   cnpm install express --save()</span><br><span class="line">   以下几个重要的模块是需要与express框架一起安装的：</span><br><span class="line">   - body-parser中间件,用于处理jSON,Raw,Text和URL编码的数据。</span><br><span class="line">   - cookie-parser-这就是一个解析Cookie的工具。通过req.cookies可以取到传过来的cookie。并把它们转成对象。</span><br><span class="line">   - multer - node.js 中间件，用于处理enctype=&quot;multipart/form-data&quot;（设置表单的MIME编码）的表单数据。</span><br><span class="line">      &gt; cnpm install body-parser --save</span><br><span class="line">	  &gt; cnpm install cookie-parser --save</span><br><span class="line">      &gt; cnpm install multer --save</span><br><span class="line"> - 使用（第一个 Express 框架实例）</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### Express框架</span><br><span class="line"> #### 安装</span><br><span class="line">   cnpm install express --save()</span><br><span class="line">   以下几个重要的模块是需要与express框架一起安装的：</span><br><span class="line">   - body-parser中间件,用于处理jSON,Raw,Text和URL编码的数据。</span><br><span class="line">   - cookie-parser-这就是一个解析Cookie的工具。通过req.cookies可以取到传过来的cookie。并把它们转成对象。</span><br><span class="line">   - multer - node.js 中间件，用于处理enctype=&quot;multipart/form-data&quot;（设置表单的MIME编码）的表单数据。</span><br><span class="line">      &gt; cnpm install body-parser --save</span><br><span class="line">	  &gt; cnpm install cookie-parser --save</span><br><span class="line">      &gt; cnpm install multer --save</span><br><span class="line"> #### 使用（第一个 Express 框架实例）</span><br></pre></td></tr></table></figure>
 
 <p>//express_demo.js 文件<br>var express = require(‘express’);<br>var app = express();</p>
 <p>app.get(‘/‘, function (req, res) {</p>
@@ -283,7 +280,7 @@ req.on(&apos;end&apos;, function(){
 <p>  var host = server.address().address<br>  var port = server.address().port</p>
 <p>  console.log(“应用实例，访问地址为 http://%s:%s”, host, port)</p>
 <p>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 路由</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### 路由</span><br></pre></td></tr></table></figure>
 
 <p>var express = require(‘express’);<br>var app = express();</p>
 <p>//  主页输出 “Hello World”<br>app.get(‘/‘, function (req, res) {<br>   console.log(“主页 GET 请求”);<br>   res.send(‘Hello GET’);<br>})</p>
@@ -321,9 +318,11 @@ var server = app.listen(8081, function () {
 
   console.log(&quot;应用实例，访问地址为 http://%s:%s&quot;, host, port)
 
-})</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 静态文件</span><br><span class="line"> Express 提供了内置的中间件express.static来设置静态文件如图片,CSS,JavaScript等.你可以这样做</span><br><span class="line"> &gt; app.use(&apos;/public&apos;, express.static(&apos;public&apos;));</span><br><span class="line"> 项目的结构</span><br><span class="line"> &gt; node_modules</span><br><span class="line"> &gt; server.js</span><br><span class="line"> &gt;	public/</span><br><span class="line"> &gt;	public/images</span><br><span class="line"> &gt; public/images/logo.png</span><br></pre></td></tr></table></figure>
+})</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#### 静态文件</span><br><span class="line"> Express 提供了内置的中间件express.static来设置静态文件如图片,CSS,JavaScript等.你可以这样做</span><br><span class="line"> &gt; app.use(&apos;/public&apos;, express.static(&apos;public&apos;));</span><br><span class="line"> 项目的结构</span><br><span class="line"> &gt; node_modules</span><br><span class="line"> &gt; server.js</span><br><span class="line"> &gt;	public/</span><br><span class="line"> &gt;	public/images</span><br><span class="line"> &gt; public/images/logo.png</span><br></pre></td></tr></table></figure>
 
-<p>  var express = require(‘express’);<br>    var app = express()<br>    app.use(‘/public’, express.static(‘public’));<br>    app.get(‘/‘, function (req, res) {<br>       res.send(‘Hello World’);<br>    })<br>    var server = app.listen(8081, function () {<br>      var host = server.address().address<br>      var port = server.address().port<br>      console.log(“应用实例，访问地址为 http://%s:%s”, host, port)<br>    })<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> 在浏览器中访问 http://127.0.0.1:8081/public/images/logo.png</span><br><span class="line">- 文件的上传</span><br><span class="line">  - 以下我们创建一个用于上传文件的表单，使用 POST 方法，表单 enctype 属性设置为 multipart/form-data。</span><br><span class="line">   html</span><br></pre></td></tr></table></figure></p>
+<p>  var express = require(‘express’);<br>    var app = express()<br>    app.use(‘/public’, express.static(‘public’));<br>    app.get(‘/‘, function (req, res) {<br>       res.send(‘Hello World’);<br>    })<br>    var server = app.listen(8081, function () {<br>      var host = server.address().address<br>      var port = server.address().port<br>      console.log(“应用实例，访问地址为 http://%s:%s”, host, port)<br>    })</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> 在浏览器中访问 http://127.0.0.1:8081/public/images/logo.png</span><br><span class="line">- 文件的上传</span><br><span class="line">  - 以下我们创建一个用于上传文件的表单，使用 POST 方法，表单 enctype 属性设置为 multipart/form-data。</span><br><span class="line">   html</span><br></pre></td></tr></table></figure>
+
 <pre><code>   &lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;文件上传表单&lt;/title&gt;
@@ -337,10 +336,9 @@ var server = app.listen(8081, function () {
 &lt;input type=&quot;submit&quot; value=&quot;上传文件&quot; /&gt;
 &lt;/form&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">js代码server.js</span><br></pre></td></tr></table></figure>
+&lt;/html&gt;</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">js代码server.js</span><br></pre></td></tr></table></figure>
 
-   var express = require(&apos;express&apos;);
+<pre><code>   var express = require(&apos;express&apos;);
 var app = express();
 var fs = require(&quot;fs&quot;);
 
@@ -383,10 +381,9 @@ var server = app.listen(8081, function () {
 
   console.log(&quot;应用实例，访问地址为 http://%s:%s&quot;, host, port)
 
-})
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  	文件上传的概述详细</span><br><span class="line">  	要点：</span><br><span class="line">(1) enctype的三种类型：</span><br><span class="line">① enctype=&quot;application/x-www-form-urlencoded&quot; 用于上传哈希值（eg: ?a=12&amp;b=5&amp;c=8）;</span><br><span class="line">② enctype=&quot;multipart/form-data&quot; 用于上传文件；</span><br><span class="line">③ enctype=&quot;text-plain&quot; 用于上传文本；</span><br><span class="line">(2) &lt;input type=&quot;file&quot; name=&quot;file&quot; /&gt; 此处的input，必须要有name属性（后台选择谁上传</span><br></pre></td></tr></table></figure>
+})</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  	文件上传的概述详细</span><br><span class="line">  	要点：</span><br><span class="line">(1) enctype的三种类型：</span><br><span class="line">enctype=&quot;application/x-www-form-urlencoded&quot; 用于上传哈希值（eg: ?a=12&amp;b=5&amp;c=8）;</span><br><span class="line">enctype=&quot;multipart/form-data&quot; 用于上传文件；</span><br><span class="line">enctype=&quot;text-plain&quot; 用于上传文本；</span><br><span class="line">(2) &lt;input type=&quot;file&quot; name=&quot;file&quot; /&gt; 此处的input，必须要有name属性（后台选择谁上传</span><br></pre></td></tr></table></figure>
 
-   const express = require(&apos;express&apos;);
+<pre><code>   const express = require(&apos;express&apos;);
 const bodyParser = require(&apos;body-parser&apos;);
 const fs = require(&apos;fs&apos;);
 const multer = require(&apos;multer&apos;);
@@ -426,10 +423,54 @@ var server = app.listen(8081, function(){
     var port = server.address().port;
 
     console.log(&apos;Server is running at http://localhost:8081&apos;);
+})</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### node开发接口准备</span><br></pre></td></tr></table></figure>
+
+<pre><code>const mysql = require(&quot;mysql&quot;);
+const bodyParser = require(&quot;body-parser&quot;);
+const express=require(&quot;express&quot;);
+const app=express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
+// 解决跨域的插件
+const cors=require(&quot;cors&quot;);
+app.use(cors());
+// let login=true;
+app.listen(8081,()=&gt;{
+    console.log(&quot;服务器启动了&quot;)
 })
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### node开发接口准备</span><br></pre></td></tr></table></figure></code></pre><p>   const mysql = require(“mysql”);<br>const bodyParser = require(“body-parser”);<br>const express=require(“express”);<br>const app=express();<br>app.use(bodyParser.json());<br>app.use(bodyParser.urlencoded({<br>    extended: false<br>}))<br>// 解决跨域的插件<br>const cors=require(“cors”);<br>app.use(cors());<br>// let login=true;<br>app.listen(8081,()=&gt;{<br>    console.log(“服务器启动了”)<br>})<br>// app.all(“*”,(req,res,next)=&gt;{<br>//     if(!login){<br>//         return res.json(“未登录”);<br>//     }<br>//     next();<br>//  })<br>// app.post(“/index/:id”,(req,res)=&gt;{<br>//    return res.json({<br>//     // ？后面的参数会放到req.query里,路径上的参数会放到req.params里(re)<br>//        query:req.query,<br>//        data:req.params</p>
-<p>//    })<br>// })<br>const conn = mysql.createConnection({ host: ‘localhost’, user: ‘root’, password: ‘root’, database: ‘node’ });<br>var  sql = ‘SELECT * FROM userTable’;<br>var  addSql = ‘INSERT INTO userTable(name,age,sex,address) VALUES(?,?,?,?)’;<br>// var  addSqlParams = [‘菜鸟工具’, ‘<a href="https://c.runoob.com&#39;,&#39;23453&#39;" target="_blank" rel="noopener">https://c.runoob.com&#39;,&#39;23453&#39;</a>, ‘CN’];<br>app.all(“/login”,(req,res)=&gt;{<br>    conn.query(sql,function (err, result) {<br>         res.json(result)<br>    })<br> })<br> //接受前端的请求，获取到前端表单的数据<br> //post请求（body）： var body = req.body;   var name = body.name;  var password = body.password;<br>// get请求（query）：  var query = req.query; var id = query.id;     var name = query.name;<br> app.all(“/register”,(req,res)=&gt;{<br>    conn.query(addSql,function (err, result) {<br>         res.json(result)<br>    })<br> })</p>
-<pre><code></code></pre>
+// app.all(&quot;*&quot;,(req,res,next)=&gt;{
+//     if(!login){
+//         return res.json(&quot;未登录&quot;);
+//     }
+//     next();
+//  })
+// app.post(&quot;/index/:id&quot;,(req,res)=&gt;{
+//    return res.json({
+//     // ？后面的参数会放到req.query里,路径上的参数会放到req.params里(re)
+//        query:req.query,
+//        data:req.params
+
+//    })
+// })
+const conn = mysql.createConnection({ host: &apos;localhost&apos;, user: &apos;root&apos;, password: &apos;root&apos;, database: &apos;node&apos; });
+var  sql = &apos;SELECT * FROM userTable&apos;;
+var  addSql = &apos;INSERT INTO userTable(name,age,sex,address) VALUES(?,?,?,?)&apos;;
+// var  addSqlParams = [&apos;菜鸟工具&apos;, &apos;https://c.runoob.com&apos;,&apos;23453&apos;, &apos;CN&apos;];
+app.all(&quot;/login&quot;,(req,res)=&gt;{
+    conn.query(sql,function (err, result) {
+         res.json(result)
+    })
+ })
+ //接受前端的请求，获取到前端表单的数据
+ //post请求（body）： var body = req.body;   var name = body.name;  var password = body.password;
+// get请求（query）：  var query = req.query; var id = query.id;     var name = query.name;
+ app.all(&quot;/register&quot;,(req,res)=&gt;{
+    conn.query(addSql,function (err, result) {
+         res.json(result)
+    })
+ })</code></pre><pre><code></code></pre>
       
 
       
@@ -579,7 +620,7 @@ var server = app.listen(8081, function(){
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#node是什么"><span class="toc-number">1.</span> <span class="toc-text">node是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块化"><span class="toc-number">2.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node全局变量是什么呢？"><span class="toc-number">3.</span> <span class="toc-text">node全局变量是什么呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exports-和-module-exports"><span class="toc-number">4.</span> <span class="toc-text">exports 和 module.exports</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm"><span class="toc-number">5.</span> <span class="toc-text">npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建服务器"><span class="toc-number">6.</span> <span class="toc-text">创建服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件系统"><span class="toc-number">7.</span> <span class="toc-text">文件系统</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#node是什么"><span class="toc-number">1.</span> <span class="toc-text">node是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块化"><span class="toc-number">2.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node全局变量是什么呢？"><span class="toc-number">3.</span> <span class="toc-text">node全局变量是什么呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exports-和-module-exports"><span class="toc-number">4.</span> <span class="toc-text">exports 和 module.exports</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm"><span class="toc-number">5.</span> <span class="toc-text">npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建服务器"><span class="toc-number">6.</span> <span class="toc-text">创建服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件系统"><span class="toc-number">7.</span> <span class="toc-text">文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#读取"><span class="toc-number">7.1.</span> <span class="toc-text">读取</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -727,11 +768,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Canvas</a>
+                <a href="javascript:void(0)" class="js-tag color4">hexo markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hexo markdown</a>
+                <a href="javascript:void(0)" class="js-tag color2">Canvas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,10 +781,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">js面向对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -759,11 +796,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue.js</a>
+                <a href="javascript:void(0)" class="js-tag color2">js面向对象</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">js复习01</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue.js</a>
               </li>
              
               <li class="article-tag-list-item">
