@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>node写一个接口全过程 | 小峰blog</title>
+  <title>Archives: 2019/12 | 小峰blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个主要说的node开发接口的全过程">
-<meta name="keywords" content="node接口">
-<meta property="og:type" content="article">
-<meta property="og:title" content="node写一个接口全过程">
-<meta property="og:url" content="http://yoursite.com/2019/11/07/node写一个接口全过程/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="小峰blog">
+<meta property="og:url" content="http://yoursite.com/archives/2019/12/index.html">
 <meta property="og:site_name" content="小峰blog">
-<meta property="og:description" content="这个主要说的node开发接口的全过程">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-07T11:39:05.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node写一个接口全过程">
-<meta name="twitter:description" content="这个主要说的node开发接口的全过程">
+<meta name="twitter:title" content="小峰blog">
   
     <link rel="alternative" href="/atom.xml" title="小峰blog" type="application/atom+xml">
   
@@ -159,283 +154,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-node写一个接口全过程" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      node写一个接口全过程
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/12/20/springboot/" class="archive-article-date">
+  	<time datetime="2019-12-20T05:39:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-20</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/20/springboot/">springboot</a>
     </h1>
   
 
-        
-        <a href="/2019/11/07/node写一个接口全过程/" class="archive-article-date">
-  	<time datetime="2019-11-07T11:03:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
-</a>
-        
-        
-        <span class="archive-article-date">
-            阅读量 <span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>这个主要说的node开发接口的全过程<a id="more"></a>
-<ul>
-<li>最近在做后台系统改版，由于目前接口还没出来，就自己用nodejs写了个简单的接口。<br>我这里用的是nodejs+mysql的<br>这里不讲nodejs和mysql的安装。这些基础略过。<br>首先创建文件夹。cd 进入文件。<br>npm init 进行初始化，生成json配置文件<br>安装下面的包<blockquote>
-<p>npm install body-parser express mysql cors -save</p>
-</blockquote>
-<h4 id="首先创建程序的入口文件-index-js"><a href="#首先创建程序的入口文件-index-js" class="headerlink" title="首先创建程序的入口文件 index.js"></a>首先创建程序的入口文件 index.js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;)</span><br><span class="line">const app = express()</span><br><span class="line"></span><br><span class="line">app.listen(8088, () =&gt; &#123;</span><br><span class="line">    console.log(&apos;服务启动&apos;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    res.send(&apos;&lt;div&gt;hello world&lt;/div&gt;&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>res.json 以json对象的形式返回去</p>
-</blockquote>
-<blockquote>
-<p>res.send 以也页面的形式返回去</p>
-</blockquote>
-<blockquote>
-<p>res.download以文件的方式返回去，前端请求会下载此文</p>
-</blockquote>
-<h4 id="运行server-js测试get请求"><a href="#运行server-js测试get请求" class="headerlink" title="运行server.js测试get请求"></a>运行server.js测试get请求</h4><h4 id="接着测试post："><a href="#接着测试post：" class="headerlink" title="接着测试post："></a>接着测试post：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">app.post(&apos;/login&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    res.json(&apos;&lt;div&gt;hello login&lt;/div&gt;&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">app.post(&apos;/text&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    res.json(&apos;&lt;div&gt;hello text&lt;/div&gt;&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>post不支持浏览器直接访问，这个时候要用postman软件,测试接口的工具</p>
-<h4 id="设置登录拦截"><a href="#设置登录拦截" class="headerlink" title="设置登录拦截"></a>设置登录拦截</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let login = false;</span><br><span class="line">//如果未登录，返回未登录，否则，继续向下匹配，回调函数接收三个参数，最后一个是next,继续向下执行，路径一定要写在最上面，不然会先被test捕捉到，test没有执行next,就会捕捉不到请求。</span><br><span class="line">app.all(&apos;*&apos;, (req, res, next) =&gt; &#123;</span><br><span class="line">    if(!login) return res.json(&apos;未登录&apos;)</span><br><span class="line">    next()</span><br><span class="line">&#125;)</span><br><span class="line">app.post(&apos;/test&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    res.json(&apos;test&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="有参数时-引入解析参数中间件"><a href="#有参数时-引入解析参数中间件" class="headerlink" title="有参数时:引入解析参数中间件"></a>有参数时:引入解析参数中间件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;)</span><br><span class="line">const app = express()</span><br><span class="line">// 解析参数</span><br><span class="line">const bodyParser = require(&apos;body-parser&apos;)</span><br><span class="line">let login = true;</span><br><span class="line">// json请求</span><br><span class="line">app.use(bodyParser.json())</span><br><span class="line">// 表单请求</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;extended: false&#125;))</span><br><span class="line">app.listen(8088, () =&gt; &#123;</span><br><span class="line">    console.log(&apos;服务启动&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">// 如果未登录，返回未登录，否则，继续向下匹配，回调函数接收三个参数，最后一个是next,继续向下执行，路径一定要写在最上面，不然会先被test捕捉到，test没有执行next,就会捕捉不到请求。</span><br><span class="line">app.all(&apos;*&apos;, (req, res, next) =&gt; &#123;</span><br><span class="line">    if(!login) return res.json(&apos;未登录&apos;)</span><br><span class="line">    next()</span><br><span class="line">&#125;)</span><br><span class="line">app.post(&apos;/test:data&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    return res.json(&#123;query: req.query, data: req.params, json: req.body&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="如需要前后端联调，需要用到跨域中间件cors："><a href="#如需要前后端联调，需要用到跨域中间件cors：" class="headerlink" title="如需要前后端联调，需要用到跨域中间件cors："></a>如需要前后端联调，需要用到跨域中间件cors：</h4><p>const cors = require(‘cors’)<br>app.use(cors)// 解决跨域</p>
-<h4 id="开始连接数据库"><a href="#开始连接数据库" class="headerlink" title="开始连接数据库"></a>开始连接数据库</h4><p>首先mysql建一个表students,然后使用mysql插件连接数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">const mysql = require(&apos;mysql&apos;)</span><br><span class="line"></span><br><span class="line">const option = &#123;</span><br><span class="line">    host: &apos;localhost&apos;,</span><br><span class="line">    user: &apos;root&apos;,</span><br><span class="line">    password: &apos;root&apos;,</span><br><span class="line">    port: &apos;3306&apos;,</span><br><span class="line">    database: &apos;nodecms&apos;,</span><br><span class="line">    connectTimeout: 5000, //连接超时</span><br><span class="line">    multipleStatements: false //是否允许一个query中包含多条sql语句</span><br><span class="line">&#125;</span><br><span class="line">const conn = mysql.createConnection(option);</span><br><span class="line">app.post(&apos;/login&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    conn.query(&quot;SELECT * FROM students&quot;, (e, r) =&gt; &#123;</span><br><span class="line">        res.json(new Result(&#123; data: r &#125;))</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">function Result (&#123; code = 1, msg = &apos;&apos;, data = &#123;&#125; &#125;) &#123;</span><br><span class="line">    this.code = code;</span><br><span class="line">    this.msg = msg;</span><br><span class="line">    this.data = data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：做断线重连机制<br>这里只贴出来了要新增的部分</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let conn;</span><br><span class="line">reconn();</span><br><span class="line"></span><br><span class="line">// 断线重连机制</span><br><span class="line">function reconn() &#123;</span><br><span class="line">    conn = mysql.createConnection(&#123; option &#125;)</span><br><span class="line">    conn.on(&apos;error&apos;, err =&gt; &#123;</span><br><span class="line">        err.code === &apos;PROTOCOL_CONNECTION_LOST&apos; &amp;&amp; setTimeout(reconn, 2000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>再进行改造，适应高并发，连接上连接池，断线连接函数上做以下处理<br>这里只贴出来了要修改的部分 上面一部分改为以下部分</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">let pool;</span><br><span class="line">repool()</span><br><span class="line"></span><br><span class="line">app.get(&apos;/login&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    pool.getConnection((err, conn) =&gt; &#123;</span><br><span class="line">        conn.query(&quot;SELECT * FROM students&quot;, (e, r) =&gt; &#123;</span><br><span class="line">            if(e) throw error</span><br><span class="line">            res.json(new Result(&#123; data: r &#125;))</span><br><span class="line">        &#125;)</span><br><span class="line">        pool.releaseConnection(conn) // 释放连接池，等待别的连接使用</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 断线重连机制</span><br><span class="line">function repool() &#123;</span><br><span class="line">    // 创建连接池</span><br><span class="line">    pool = mysql.createPool(&#123;</span><br><span class="line">        ...option,</span><br><span class="line">        waitForConnections: true, //当无连接池可用时，等待（true）还是抛错（false）</span><br><span class="line">        connectionLimit: 100, //连接数限制</span><br><span class="line">        queueLimit: 0 //最大连接等待数（0为不限制）</span><br><span class="line">    &#125;)</span><br><span class="line">    pool.on(&apos;error&apos;, err =&gt; &#123;</span><br><span class="line">        err.code === &apos;PROTOCOL_CONNECTION_LOST&apos; &amp;&amp; setTimeout(repool, 2000)</span><br><span class="line">    &#125;)</span><br><span class="line">    app.all(&apos;*&apos;, (_,__, next) =&gt; &#123;</span><br><span class="line">        pool.getConnection( err =&gt; &#123;</span><br><span class="line">            err &amp;&amp; setTimeout(repool, 2000) || next()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="最后引入路由把页面拆分开-完整版"><a href="#最后引入路由把页面拆分开-完整版" class="headerlink" title="最后引入路由把页面拆分开(完整版)"></a>最后引入路由把页面拆分开(完整版)</h4><p>connect.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">const express=require(&apos;express&apos;);</span><br><span class="line">const mysql=require(&apos;mysql&apos;);</span><br><span class="line">const cors=require(&apos;cors&apos;);</span><br><span class="line">const bodyParser=require(&apos;body-parser&apos;);//解析参数</span><br><span class="line">const app=express();</span><br><span class="line">const router=express.Router();</span><br><span class="line">const option=&#123;</span><br><span class="line">  host: &apos;localhost&apos;,</span><br><span class="line">  user: &apos;root&apos;,</span><br><span class="line">  password: &apos;root&apos;,</span><br><span class="line">  port: &apos;3306&apos;,</span><br><span class="line">  database: &apos;node&apos;,</span><br><span class="line">  connectTimeout: 5000,//连接超时</span><br><span class="line">  multipleStatements: false//是否允许一个query中包含多条sql语句</span><br><span class="line">&#125;</span><br><span class="line">app.use(cors());//解决跨域</span><br><span class="line">app.use(bodyParser.json());//json请求</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;extended:false&#125;));//表单请求</span><br><span class="line">let pool;</span><br><span class="line">repool();</span><br><span class="line"></span><br><span class="line">function Result(&#123;code=1,msg=&apos;&apos;,data=&#123;&#125;&#125;)&#123;</span><br><span class="line">  this.code=code;</span><br><span class="line">  this.msg=msg;</span><br><span class="line">  this.data=data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function repool()&#123;//断线重连机制</span><br><span class="line">  pool=mysql.createPool(&#123;</span><br><span class="line">    ...option,</span><br><span class="line">    waitForConnections: true,//当无连接池可用时，等待(true)还是抛错（false)</span><br><span class="line">    connectionLimit: 100,//连接数限制</span><br><span class="line">    queueLimit: 0//最大连接等待数(0为不限制)</span><br><span class="line">  &#125;);//创立连接池</span><br><span class="line">  pool.on(&apos;error&apos;,err=&gt;err.code === &apos;PROTOCOL_CONNECTION_LOST&apos; &amp;&amp; setTimeout(repool,2000));</span><br><span class="line">  app.all(&apos;*&apos;,(_,__,next)=&gt;pool.getConnection(err=&gt;err &amp;&amp; setTimeout(repool,2000) || next()));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports=&#123;pool,Result,router,app&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>新建一个文件夹，在文件夹下新增index.js<br>login/index.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const &#123;pool,router,Result&#125;=require(&apos;../connect&apos;);</span><br><span class="line">router.all(&apos;*&apos;,(req,res,next)=&gt;&#123;</span><br><span class="line">  // res.json(&apos;我拦截的是/还是/login呢&apos;);</span><br><span class="line">  next();</span><br><span class="line">&#125;)</span><br><span class="line">router.get(&apos;/&apos;,(req,res)=&gt;&#123;</span><br><span class="line">  pool.getConnection((err,conn)=&gt;&#123;</span><br><span class="line">    conn.query(`select *</span><br><span class="line">    from userTable`,(e,r)=&gt;res.json(new Result(&#123;data:r&#125;)));</span><br><span class="line">    conn.release();</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">router.get(&apos;/reg&apos;,(req,res)=&gt;&#123;</span><br><span class="line">  res.json(&apos;reg&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">module.exports=router;</span><br></pre></td></tr></table></figure>
-
-<p>入口文件index.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const &#123;app,pool,Result&#125;=require(&apos;./connect&apos;);</span><br><span class="line">const login=require(&apos;./login/index&apos;);</span><br><span class="line">app.all(&apos;/&apos;,(req,res)=&gt;&#123;</span><br><span class="line">  pool.getConnection((err,conn)=&gt;&#123;</span><br><span class="line">    res.json(&#123;a:&quot;b&quot;&#125;)</span><br><span class="line">    conn.release();//释放链接池，等待别的连接使用</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">// app.use(path,callback)中的callback既可以是router对象又可以是函数；</span><br><span class="line">// 将一个URL路径与一个函数绑定，第一个参数为访问的路径，如果第一参数为空，</span><br><span class="line">// 则表示任何路径都触发这个处理函数；第二个参数为执行的函数</span><br><span class="line">//app.get(path,callback)中的callback只能是函数</span><br><span class="line">app.use(&apos;/login&apos;,login);</span><br><span class="line">app.listen(80,()=&gt;console.log(&apos;服务启动&apos;));</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/xuejinfeng/nodeApi" target="_blank" rel="noopener">源码地址</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/wexin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-            <span id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-</span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">node接口</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/07/node写一个接口全过程/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/11/16/git常用命令解释/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          git常用命令解释
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/11/07/node入门/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">node入门</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先创建程序的入口文件-index-js"><span class="toc-number">1.</span> <span class="toc-text">首先创建程序的入口文件 index.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#运行server-js测试get请求"><span class="toc-number">2.</span> <span class="toc-text">运行server.js测试get请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接着测试post："><span class="toc-number">3.</span> <span class="toc-text">接着测试post：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置登录拦截"><span class="toc-number">4.</span> <span class="toc-text">设置登录拦截</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#有参数时-引入解析参数中间件"><span class="toc-number">5.</span> <span class="toc-text">有参数时:引入解析参数中间件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如需要前后端联调，需要用到跨域中间件cors："><span class="toc-number">6.</span> <span class="toc-text">如需要前后端联调，需要用到跨域中间件cors：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开始连接数据库"><span class="toc-number">7.</span> <span class="toc-text">开始连接数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最后引入路由把页面拆分开-完整版"><span class="toc-number">8.</span> <span class="toc-text">最后引入路由把页面拆分开(完整版)</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-
-  
-  <section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'true' == true ? true : false;
-   var verify = 'true' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "FTWdDd82dpteNvDea9S5vn4t-gzGzoHsz",
-            app_key: "EKfNcX06SOSwAIatQiBNJ9b6",
-            placeholder: "来发个评论吧，给up一点&#34;tip&#34;",
-            avatar:"monsterid"
-        });
-    }
-</script>
-  </section>
-  
-
-
-
-  
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -462,8 +234,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
